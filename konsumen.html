@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="autumn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Daftar Konsumen</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="navbar bg-neutral text-neutral-content">
+        <ul class="nav navbar-nav">
+        <li><a class="btn btn-ghost normal-case text-xl" href="index.html">Daftar Produk</a></li>
+        <li><a class="btn btn-ghost normal-case text-xl" href="kategori.html">Kategori Produk</a></li>
+        <li><a class="btn btn-ghost normal-case text-xl" href="penjualan.html">Transaksi Penjualan</a></li>
+        <li><a class="btn btn-ghost normal-case text-xl" href="konsumen.html">Konsumen</a></li>
+        </ul>
+    </div>
+    <div class="container mx-auto">
+        <div class="flex justify-center gap-5">
+            <div class="card w-96 bg-base-100 shadow-xl">
+                <form id="form-konsumen" action="" onsubmit="event.preventDefault(); addConsumer(this)">
+                    <div class="card-body">
+                        <h2 class="card-title">Konsumen</h2>
+                        <p>
+                            <input name="index" type="hidden" value="-1">
+                            <div>
+                                <label for="names">Nama</label>
+                            </div>
+                            <div>
+                                <input type="text" id="name" name="name" class="input input-bordered w-full max-w-xs" placeholder="Masukan Nama">
+                            </div>
+                            <div>
+                                <label for="address">Alamat</label>
+                            </div>
+                            <div>
+                                <input type="text" id="address" name="address" class="input input-bordered w-full max-w-xs" placeholder="Masukan Alamat">
+                            </div>
+                            <div>
+                                <label for="noPhone">No HP</label>
+                            </div>
+                            <div>
+                                <input type="text" id="noPhone" name="noPhone" class="input input-bordered w-full max-w-xs" placeholder="Masukan NO HP">
+                            </div>
+                            <div>
+                                <label for="email">Email</label>
+                            </div>
+                            <div>
+                                <input type="text" id="email" name="email" class="input input-bordered w-full max-w-xs" placeholder="Masukan Email">
+                            </div>
+                        </p>
+                        <div class="card-actions justify-end">
+                            <button id="btn-save-konsumen" class="btn btn-primary">Simpan</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card w-96 bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h2 class="card-title">Daftar Konsumen</h2>
+                    <p>
+                        <ul id="daftar-konsumen" class="menu">
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <script src="aplikasi-daftar-konsumen.js"></script> 
+        </body>
+        </html>

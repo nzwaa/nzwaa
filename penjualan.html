@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="autumn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Transaksi Penjualan</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <div class="navbar bg-neutral text-neutral-content">
+        <ul class="nav navbar-nav ">
+        <li><a class="btn btn-ghost normal-case text-xl" href="index.html">Daftar Produk</a></li>
+        <li><a class="btn btn-ghost normal-case text-xl" href="kategori.html">Kategori Produk</a></li>
+        <li><a class="btn btn-ghost normal-case text-xl" href="penjualan.html">Transaksi Penjualan</a></li>
+        <li><a class="btn btn-ghost normal-case text-xl" href="konsumen.html">Konsumen</a></li>
+        </ul>
+    </div>
+    <div class="container mx-auto">
+        <div class="flex justify-center gap-5">
+            <div class="card w-96 bg-base-100 shadow-xl">
+                <form id="form-produk" action="" onsubmit="event.preventDefault(); addTransaction(this)">
+                    <div class="card-body">
+                        <h2 class="card-title">Transaksi Penjualan</h2>
+                        <p>
+                            <input name="index" type="hidden" value="-1">
+                                <div>
+                                    <label for="listConsumer">Nama Konsumen</label>
+                                </div> 
+                                <select class="select select-bordered w-full max-w-xs" id="listConsumer" name="listConsumer">
+                                    <option>Pilih konsumen</option>
+                                </select>
+                                <div>
+                                    <label for="listProduct">Pilih Produk</label>
+                                </div> 
+                                <select class="select select-bordered w-full max-w-xs" id="listProduct" name="listProduct">
+                                    <option>Pilih Produk</option>
+                                </select>
+                                <div>
+                                    <label for="name">Nama Produk</label>
+                                    <input type="text" id="name" readonly name="name" class="input input-bordered w-full max-w-xs" placeholder="Masukan Nama" >
+                                </div>
+                                <div>
+                                    <label for="cost">Harga Produk</label>
+                                </div>
+                                <div>
+                                    <input type="number" id="cost" name="cost" class="input input-bordered w-full max-w-xs" placeholder="Masukan Harga" onkeyup="addition()" >
+                                </div>
+                                <div>
+                                    <label for="stock">Stok Produk</label>
+                                </div>
+                                <div>
+                                    <input type="number" id="stock" readonly name="stock" class="input input-bordered w-full max-w-xs" placeholder="Masukan Stok">
+                                </div>
+                                <div>
+                                    <label for="picture">Link Gambar Produk</label>
+                                </div>
+                                <div>
+                                    <input type="text" id="picture" readonly name="picture" class="input input-bordered w-full max-w-xs" placeholder="Masukan Link Gambar">
+                                </div>
+                                <div>
+                                    <label for="amount">Jumlah</label>
+                                </div>
+                                <div>
+                                    <input type="number" id="amount" name="amount" class="input input-bordered w-full max-w-x" placeholder="Masukan Jumlah" onkeyup="addition()">
+                                </div>
+                                <div>
+                                    <label for="total">Total Harga</label>
+                                </div>
+                                <div>
+                                    <input type="number" id="total" readonly name="total" class="input input-bordered w-full max-w-x" placeholder="Masukan Total" onkeyup="addition()">
+                                </div>
+                                <div>
+                                    <label for="cash">Tunai</label>
+                                </div>
+                                <div>
+                                    <input type="number" id="cash" name="cash" class="input input-bordered w-full max-w-x" placeholder="Masukan Tunai" onkeyup="addition()">
+                                </div>
+                                <div>
+                                    <label for="change">Kembalian</label>
+                                </div>
+                                <div>
+                                    <input type="number" id="change" readonly name="change" class="input input-bordered w-full max-w-x" placeholder="Masukan Kembalian">
+                                </div>
+                            </p>
+                                <div class="card-actions justify-end">
+                                <button id="btn-save-transaksi" class="btn btn-primary">Simpan</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card w-96 bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h2 class="card-title">Daftar Transaksi</h2>
+                    <p>
+                        <ul id="daftar-transaksi" class="menu">
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <script src="aplikasi-transaksi-penjualan.js"></script> 
+</body>
+</html>
